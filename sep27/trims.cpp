@@ -1,42 +1,58 @@
 # include <iostream>
-# include <vector>
-
-std::string my_rtrims (std::string str)
+# include <string>
+std::string mtrims (std::string&);
+int main ()
 {
-   std::string  s;
-   
-  int ind=0; 
-  for (int i=str.size()-1;i>0;--i)
-  {
-    if (str[i]==' ')
-    {
-      ind=i;
-      
-    }
-   
-  }
- for (int i=0;i<ind;++i)
- {
-  s+=str[i];
+
+ std::string str;
+std::cin>>str;
+
+std::cout<<mtrims(str)<<std::endl;
+
+return 0;
+
+
+}
+
+std::string mtrims (std::string &str)
+{
+
+  int ind1=0;
+  int ind2=0;
+  int i=0,j=str.size()-1;
+  while (str[i]!='\0')
+{
+   if  (str[i]!=' ')
+{
+  ind1=i;
  
- } 
-   str=s;
-  
-   
-std::cout<<ind;
-   
-   return str;
+break; 
+ 
 }
-
-int main  ()
+++i;
+}
+while (str[j]!='\0')
 {
+if (str[j]!=' ')
+{
+ ind2=j;
 
-	std::string str = "hello   ";
-
-	std::cout << my_rtrims(str);
-
-
-	return 0;
-
+break;
 
 }
+++j;
+
+}
+
+
+str.erase (0,ind1);
+str.erase(ind2+1,str.size());
+
+
+return str;
+
+}
+
+
+
+
