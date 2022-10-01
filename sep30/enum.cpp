@@ -4,7 +4,7 @@
 enum Colors {Red,Blue,Green,Black,White};
 
 std::string toString(Colors col);
-Colors toEnum(std::string const&);
+Colors toEnum(const std::string &);
 
 
 int main ()
@@ -35,7 +35,7 @@ std::string toString(Colors col)
 return mp[col];
 }
 
-Colors toEnum(std::string const& s)
+Colors toEnum(const std::string & s)
 {
  std::map <std::string, Colors> mp;
 
