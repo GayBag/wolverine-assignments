@@ -27,7 +27,7 @@ std::string replaceAll(std::string &s,  const std::string &t,  const std::string
 	while ((pos = ss.find(t)) != std::string::npos)
 	{
           	     
-		    pos = ss.find(t);
+		  
                   
 		   ind += (s.substr(0,pos)).size();
                        
